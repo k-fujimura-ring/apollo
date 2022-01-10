@@ -33,5 +33,12 @@
     "node_modules",
     ".nuxt",
     "dist"
-  ]
+  ],
+  "files": [
+    "shims-gql.d.ts"
+  ],
+  "include": [
+    "apollo/queries/*.gql",
+    "apollo/queries/**/*.gql"
+  ],
 }
