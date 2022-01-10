@@ -1,0 +1,6 @@
+query GetField {
+    field {
+        name
+        country
+    }
+}

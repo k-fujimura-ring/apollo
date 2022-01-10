@@ -15,7 +15,6 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -25,6 +24,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/mock', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,11 +35,20 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
   ],
+  apollo: {
+    clientConfigs: {
+      default: {
+        // Graphqlのエンドポイントを指定するが、MSW使用のため空欄。
+        httpEndpoint: '',
+      }
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/apollo',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
