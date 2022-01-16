@@ -1,7 +1,7 @@
 import { graphql } from 'msw'
 import { GetPlayersQuery } from '../../../models/queries/player/player'
 
-export const getPlayers = graphql.query<GetPlayersQuery>('GetPlayers', (req, res, ctx) => {
+export const getPlayers = graphql.query<GetPlayersQuery>('GetPlayers', (_, res, ctx) => {
   return res(
     ctx.data({
       players: [
