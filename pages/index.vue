@@ -50,6 +50,13 @@ export default Vue.extend({
     field: {
       query: getField
     }
+  },
+  mounted() {
+    this.$apollo.query({
+      query: getPlayers,
+    }).then((res) => {
+      console.log('res', res)
+    })
   }
 })
 </script>
